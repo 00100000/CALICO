@@ -6,10 +6,16 @@ using namespace std;
 #endif
 
 void solve() {
-	int n, k, d;
-	cin >> n >> k >> d;
-	vector<int> b(n);
-	for (int i = 0; i < n; i++) cin >> b[i];
+	int n, b, w, d;
+	cin >> n >> b >> w >> d;
+	int ans = (b + w + b) * b;
+	for (int i = 0; i < n; i++) {
+		int h;
+		cin >> h;
+		ans += h * b * 2;
+		ans += (b + w + b) * b;
+	}
+	cout << ans * d;
 }
 
 int main() {
